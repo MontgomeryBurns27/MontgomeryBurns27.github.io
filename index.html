@@ -1,0 +1,302 @@
+<!DOCTYPE html> 
+ <html lang="ru"> 
+  
+ <head> 
+     <meta charset="UTF-8"> 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+     <link rel="stylesheet" href= "styles/normalize.css"> 
+     <link rel="stylesheet" href="styles/style.css"> 
+     <!-- Надо исправить: ИСПРАВИЛ 
+         1. Некорректно прописаны пути, если корневую папку переименовать, все сломается. Приведите пути к виду "styles/normalize.css" 
+         2. Файл normalize.css нужно подключать перед пользовательскими стилями 
+     --> 
+     <title>Научиться учиться</title> 
+ </head> 
+  
+ <body> 
+     <div class="page"> 
+         <header class="header"> 
+             <div class="header__logo_place"></div> 
+             <!-- Надо исправить: ИСПРАВИЛ 
+                 Класс не соответствует брифу: должен быть элемент logo, модификатор place в значении header 
+                 Придерживайтесь схемы: "block block_mod_value" 
+             --> 
+             <h1 class="header__title">Научиться учиться</h1> 
+             <p class="header__subtitle">Какие современные и эффективные подходы к обучению вы можете использовать в 
+                 своей жизни? 
+                 <a href="" class="header__link">Узнать &#8594;</a> 
+                 <!-- Надо исправить: ИСПРАВИЛ 
+                     Класс не соответствует БЭМ, элемент link должен принадлежать блоку header, "subtitle_" в имени класса быть не должно 
+                     Придерживайтесь схемы: "block__element" 
+                 --> 
+             </p> 
+             <!-- Надо исправить: ИСПРАВИЛ 
+                 Элемент <div> здесь - не лучшее решение. div, обычно, является нашим контейнером, в котором мы располагаем данные.  
+                 Он может содержать другие блочные элементы, в основном мы используем такой контейнер для последующей стилизации содержимого,  
+                 т.к. сам по себе div не несет какого-либо смысла, а является обычным блочным элементом (Согласно старой контентной модели) или же flow-content (Согласно HTML5-content model). 
+                 Более подробно с контентными моделями HTML5 можно ознакомиться здесь: https://www.w3.org/TR/2011/WD-html5-20110525/content-models.html . 
+                 Для элементов, содержащих текстовый контент используйте h1-h6/p 
+             --> 
+             <div class="header__main-illustration"></div> 
+             <div class="header__square-pic"></div> 
+         </header> 
+         <main class="content"> 
+             <section class="description"> 
+                 <div class="two-columns"> 
+                     <h3 class="two-columns__brief">Главные проблемы в обучении</h3> 
+                     <!-- Надо исправить: ИСПРАВИЛ two-columns__brief должен быть заголовком. --> 
+                     <div class="two-columns__main-text"> 
+                         <p class="two-columns__paragraph">Ни в школе, ни в институте нас не учат тому, как правильно изучать материал. Мы готовимся 
+                                 к экзаменам и учим билеты. Мы тренируемся решать однообразные задачи, чтобы лучше сдать 
+                                 тест, но часто в итоге это не дает нам реального знания. Зубрежка быстро выветривается и 
+                                 не приносит пользы.</p> 
+                         <p class="two-columns__paragraph"><span class="two-columns__span">Вывод:</span> 
+                                 учиться тоже нужно уметь, но почему-то этому мало где учат. Что с этим делать?</p> 
+                         <p class="two-columns__paragraph">Конкретные техники и упражнения помогают изменить подход к обучению, сделать его 
+                                 эффективным и захватывающим. Эти же техники применяются на примере обучения в 
+                                 Практикуме</p> 
+                     </div> 
+                     <!-- Надо исправить: ИСПРАВИЛ 
+                         Тег section для two-columns__main-text не самое лучшее решение, section представляет собой автономный раздел определенной тематики, хорошим примером будут 
+                         главы книг. Здесь же, это просто визуальная группировка, не несущая смысла: тут подойдет просто div 
+                         Подробнее про section можно почитать тут: https://www.w3.org/TR/html53/sections.html#the-section-element 
+                     --> 
+                 </div> 
+             </section> 
+             <section class="digits"> 
+                 <h2 class="section-title">Цифры и факты</h2> 
+                 <!-- Надо исправить: ИСПРАВИЛ Тут должен быть заголовок. --> 
+                 <h3 class="section-subtitle">Про учёбу и мозг</h3> 
+                 <!-- Надо исправить: ИСПРАВИЛ Данный элемент содержит текстовый контент, использование DIV - некорректное решение. --> 
+                 <div class="table"> 
+                     <!-- Надо исправить: ИСПРАВИЛ Тут тоже лучше использовать div, а не section --> 
+                     <div class="table__cell"> 
+                         <!-- Надо исправить: ИСПРАВИЛ 
+                             По всей таблице: 
+                             1. heading и text - элементы блока table, "cell_" в имени их класса быть не должно 
+                             2. Все heading должны быть заголовками 
+                         --> 
+                         <h2 class="table__heading">86 миллиардов</h2> 
+                         <p class="table__text">Число нейронов в мозге человека</p> 
+                     </div>     
+                     <div class="table__cell"> 
+                         <h2 class="table__heading">2.1 миллиарда</h2> 
+                         <p class="table__text">Число нуждающихся в повышении квалификации</p> 
+                         <p class="table__text">Всемирный Банк, 2017</p> 
+                     </div> 
+                     <div class="table__cell"> 
+                         <h2 class="table__heading">1000 терабайт</h2> 
+                         <p class="table__text">Объём памяти человека</p> 
+                     </div> 
+                     <div class="table__cell"> 
+                         <h2 class="table__heading">500 триллионов</h2> 
+                         <p class="table__text">Число ответственных за обучение нервных синапсов у взрослого человека</p> 
+                     </div> 
+                     <div class="table__cell"> 
+                         <h2 class="table__heading">420 миллионов</h2> 
+                         <p class="table__text">Число взрослых людей моложе 25 лет, не имеющих образования для трудоустройства</p> 
+                         <p class="table__text">Всемирный Банк, 2017</p> 
+                     </div> 
+                     <div class="table__cell"> 
+                         <h2 class="table__heading">17–20 лет</h2> 
+                         <p class="table__text">Пик обучаемости</p> 
+                     </div> 
+                     <div class="table__cell"> 
+                         <h2 class="table__heading">1885 год</h2> 
+                         <p class="table__text">Открытие кривой забывания</p> 
+                     </div> 
+                     <div class="table__cell"> 
+                         <h2 class="table__heading">1889 год</h2> 
+                         <p class="table__text">Открытие условного рефлекса</p> 
+                     </div> 
+                 </div> 
+             </section> 
+             <section class="feinman"> 
+                 <h2 class="feinman__title">Метод Фейнмана</h2> 
+                 <!-- Надо исправить: Исправил feinman__title должен быть заголовком. --> 
+                 <p class="feinman__subtitle">Выучить и не забыть.</p> 
+                 <a href="" class="feinman__link">Подробнее &#8594;</a> 
+             </section> 
+             <section class="kaufman"> 
+                 <h2 class="title__theme_dark section-title">Принципы обучения</h2> 
+                 <!-- Надо исправить: ИСПРАВИЛ 
+                     1. Тут должен быть заголовок.  
+                     2. Класс не соответсвует БЭМ, модификатор должен отделяться одним подчеркиванием. 
+                     Придерживайтесь схемы: block block_mod_value 
+                 --> 
+                 <p class="subtitle__theme_dark section-subtitle">от Джоша Кауфмана</p> 
+                 <!-- Надо исправить: ИСПРАВИЛ 
+                     1. Тут должен быть <p>  
+                     2. Класс не соответсвует БЭМ, модификатор должен отделяться одним подчеркиванием. 
+                     Придерживайтесь схемы: block block_mod_value 
+                 --> 
+                 <div class="table__theme_dark table"> 
+                     <!-- Надо исправить: ИСПРАВИЛ Тут тоже лучше использовать div, а не section --> 
+                     <div class="table__cell_theme_dark table__cell"> 
+                         <!-- Надо исправить: ИСПРАВИЛ 
+                             По всей таблице: 
+                             1. heading и text - элементы блока table, "cell_" в имени их класса быть не должно 
+                             2. Все heading должны быть заголовками 
+                             3. Значение модификатора "dark" должно отделяться нижним подчеркиванием(исправьте для heading и text) 
+  
+                             Придерживайтесь схемы: "block__element block__element_mod_value" 
+                         --> 
+                         <h2 class="table__heading_theme_dark table__heading">1</h2> 
+                         <p class="table__text_theme_dark table__text">Выберите привлекательный проект.</p> 
+                     </div> 
+                     <div class="table__cell_theme_dark table__cell"> 
+                         <h2 class="table__heading_theme_dark table__heading">2</h2> 
+                         <p class="table__text_theme_dark table__text">Сосредоточьтесь на каком-то одном навыке.</p> 
+                     </div> 
+                     <div class="table__cell_theme_dark table__cell"> 
+                         <h2 class="table__heading_theme_dark table__heading">3</h2> 
+                         <p class="table__text_theme_dark table__text">Определите целевой уровень мастерства.</p> 
+                     </div> 
+                     <div class="table__cell_theme_dark table__cell"> 
+                         <h2 class="table__heading_theme_dark table__heading">4</h2> 
+                         <p class="table__text_theme_dark table__text">Разбейте навык на элементы.</p> 
+                     </div> 
+                     <div class="table__cell_theme_dark table__cell"> 
+                         <h2 class="table__heading_theme_dark table__heading">5</h2> 
+                         <p class="table__text_theme_dark table__text">Приготовьте всё необходимое для занятий.</p> 
+                     </div> 
+                     <div class="table__cell_theme_dark table__cell"> 
+                         <h2 class="table__heading_theme_dark table__heading">6</h2> 
+                         <p class="table__text_theme_dark table__text">Устраните препятствия для занятий.</p> 
+                     </div> 
+                     <div class="table__cell_theme_dark table__cell"> 
+                         <h2 class="table__heading_theme_dark table__heading">7</h2> 
+                         <p class="table__text_theme_dark table__text">Выделите специальное время для занятий.</p> 
+                     </div> 
+                     <div class="table__cell_theme_dark table__cell"> 
+                         <h2 class="table__heading_theme_dark table__heading">8</h2> 
+                         <p class="table__text_theme_dark table__text">Создайте быстрые петли обратной связи.</p> 
+                     </div> 
+                     <div class="table__cell_theme_dark table__cell"> 
+                         <h2 class="table__heading_theme_dark table__heading">9</h2> 
+                         <p class="table__text_theme_dark table__text">Занимайтесь по расписанию, короткими интенсивными интервалами.</p> 
+                     </div> 
+                     <div class="table__cell_theme_dark table__cell"> 
+                         <h2 class="table__heading_theme_dark table__heading">10</h2> 
+                         <p class="table__text_theme_dark table__text">Уделяйте внимание количеству и скорости.</p> 
+                     </div> 
+                 </div> 
+                 <div class="kaufman__trangle"></div> 
+                 <!-- Надо исправить: ИСПРАВИЛ 
+                     Удалите атрибут alt, div его не поддерживает 
+                 --> 
+             </section> 
+         </main> 
+         <footer class="footer"> 
+             <section class="footer__columns"> 
+                 <div class="footer__column_content_copyright">   
+                     <!-- Надо исправить: ИСПРАВИЛ 
+                         Класс не соответствует БЭМ. Не хватает класса от которого образован модификатор 
+                         + значение модификатора должно отделяться одним подчеркиванием. 
+  
+                          Придерживайтесь схемы: "block__element block__element_mod_value" 
+                     -->               
+                     <img src="images/logo_white.svg" class="logo_place_footer" alt="Логотип ЯндексПрактикума"> 
+                     <!-- Надо исправить: ИСПРАВИЛ 
+                         1. Лишняя div обертка, класс задайте самому img 
+                         2. ТАК НАПИСАННО В БРИФЕ СЛОВО В СЛОВО НАИМЕНОВАНИЕ КЛАССА Класс не соответствует БЭМ. Не хватает класса от которого образован модификатор 
+                         + модификатор должен отделяться одним подчеркиванием. 
+  
+                         Придерживайтесь схемы: "block block_mod_value" 
+                     --> 
+                     <p class="footer__author">&#169; 2019. Васильев Денис</p> 
+                 </div> 
+                 <div class="footer__column_content_info"> 
+                     <!-- Надо исправить: ИСПРАВИЛ 
+                         Класс не соответствует БЭМ. Не хватает класса от которого образован модификатор 
+                         + значение модификатора должно отделяться одним подчеркиванием. 
+  
+                          Придерживайтесь схемы: "block__element block__element_mod_value" 
+                     --> 
+                     <h2 class="footer__column-heading">О Практикуме</h2> 
+                     <nav> 
+                          <ul class="footer__column_links"> 
+                             <li class="footer__list-item"><a href="#header">Главная</a></li> 
+                             <li class="footer__list-item"><a href="#description">Концепция</a></li> 
+                             <li class="footer__list-item"><a href="#feinman">Наставники</a></li>	 
+                         </ul> 
+                     </nav> 
+                 </div> 
+                 <div class="footer__column_content-social"> 
+                     <!-- Надо исправить: ИСПРАВИЛ 
+                         Класс не соответствует БЭМ. Не хватает класса от которого образован модификатор 
+                         + значение модификатора должно отделяться одним подчеркиванием. 
+  
+                          Придерживайтесь схемы: "block__element block__element_mod_value" 
+                     --> 
+                     <h2 class="footer__column-heading">Соцсети</h2> 
+                     <!-- Надо исправить: ИСПРАВИЛ 
+                         1. Здесь column и heading слова одного имени элемента, их должен разделять дефис 
+                         2. footer__column-heading должен быть заголовком.  
+                     --> 
+                     <ul class="footer__social-icons"> 
+                         <li class="footer__list-item"><a href="https://www.facebook.com" target="_blank"><img src="images/facebook_white.svg" class="footer__social_icon" alt="Facebook Icon">Facebook</a></li> 
+                         <li class="footer__list-item"><a href="https://vk.com/" target="_blank"><img src="images/vk_white.svg" class="footer__social_icon" alt="Иконка ВКонтакте">ВКонтакте</a></li> 
+                         <li class="footer__list-item"><a href="https://www.instagram.com/d_v8080/?r=nametag" target="_blank"><img src="images/instagram_white.svg" class="footer__social_icon" alt="Instagram Icon">Instagram</a></li>	 
+                     </ul> 
+                     <!-- Надо исправить:Исправил 
+                         1. Тут section тоже замените на ul с классом footer__column-links(согласно методологии БЭМ однотипные элементы должны иметь одинаковый класс) 
+                         2. Соответственно div замените на <li> с классом footer__list-item 
+                         3. Иконки нужно поместить внутрь ссылок, чтобы при клике на иконку тоже происходил переход по ссылке (<a> <img> Имя соцсети</a>) 
+                         4. Класс иконок не соответствует БЭМ, воспользуйтесь классом из брифа в единственном числе: footer__social-icon 
+                     --> 
+                 </div> 
+             </section> 
+         </footer> 
+     </div> 
+ </body> 
+  
+ </html> 
+  
+ <!--Резюме по работе: 
+  
+     У вас получилась хорошая работа! Что понравилось: 
+  
+         - Используете HTML-мнемоники 
+         - Форматирование кода. 
+         - В некоторых местах были выбраны очень хорошие теги для элементов. 
+         - В целом, с БЭМ подходом вы справились. 
+         - Верстка очень похожа на макет. 
+         - Правильно оформлен head 
+      
+     Что надо исправить помимо замечаний в коде: 
+  
+         - Все текстовые элементы должны быть размечены h1-h6/p, а не div. 
+  
+         - Проверьте, чтобы в разметке не было лишних(у которых только один потомок) div-оберток. 
+  
+         - Файл style.css должен находиться в папке styles 
+  
+         - Поправьте пути по всей работе.  
+         Придерживайтесь схемы: "имя_папки/имя_файла.расширение"  
+  
+         - Цвет ссылки header__link не соответствует брифу(должен быть светло-голубой, код цвета возьмите из брифа) 
+  
+         - нужно убрать подчеркивание у header__link 
+  
+         - Цвет two-columns__brief не соответствует брифу(должен быть светло-голубой, код цвета возьмите из брифа) 
+  
+         -  Ширина two-columns по брифу должна быть 80% (не забудьте расположить блок по центру) 
+  
+         - Вместо margin'а сверху для .feinman__title задайте padding сверху для feinman, тогда ссылка будет на одном уровне с подзаголовком, как того просит бриф. 
+  
+  
+     Можно лучше: 
+  
+         -СДЕЛАЛ Оставлять атрибут alt пустым - не лучшая практика.  
+         Пользователь не получит никакой информации в том случае, если изображение не загрузится. 
+  
+         -СДЕЛАЛ Очень хорошей практикой было бы добавить всем интерактивным элементам(тем, с которыми может взаимодействовать пользователь, например - ссылки) 
+         эффект при наведении с помощью :hover. 
+         Подробнее про состояние наведения можно почитать тут https://developer.mozilla.org/ru/docs/Web/CSS/:hover 
+  
+     Комментарии "можно лучше" носят рекомендательный характер, их выполнение остается на Ваше усмотрение. 
+     Комментарии "надо исправить" являются обязательными, только при выполнении всех "надо исправить" работа будет зачтена. 
+     Пожалуйста, не удаляйте комментарии до следующей итерации. 
+     Для вашего удобства, рекомендую помечать каким-нибудь символом комментарии, которые вы выполнили. 
+ --> 
